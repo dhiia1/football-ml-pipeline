@@ -1,0 +1,2221 @@
+[
+  {
+    "match_id": 564690,
+    "date": "2026-09-19T19:00:00Z",
+    "matchday": 7,
+    "home_team": "Sevilla FC",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564697,
+    "date": "2026-09-20T12:00:00Z",
+    "matchday": 7,
+    "home_team": "Getafe CF",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564688,
+    "date": "2026-09-20T14:15:00Z",
+    "matchday": 7,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564695,
+    "date": "2026-09-20T16:30:00Z",
+    "matchday": 7,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564696,
+    "date": "2026-09-20T16:30:00Z",
+    "matchday": 7,
+    "home_team": "Villarreal CF",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564689,
+    "date": "2026-09-20T19:00:00Z",
+    "matchday": 7,
+    "home_team": "Valencia CF",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564706,
+    "date": "2026-10-09T19:00:00Z",
+    "matchday": 8,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564698,
+    "date": "2026-10-10T12:00:00Z",
+    "matchday": 8,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564699,
+    "date": "2026-10-10T14:15:00Z",
+    "matchday": 8,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564700,
+    "date": "2026-10-10T16:30:00Z",
+    "matchday": 8,
+    "home_team": "FC Barcelona",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564702,
+    "date": "2026-10-10T19:00:00Z",
+    "matchday": 8,
+    "home_team": "Real Madrid CF",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564703,
+    "date": "2026-10-11T12:00:00Z",
+    "matchday": 8,
+    "home_team": "Elche CF",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564707,
+    "date": "2026-10-11T14:15:00Z",
+    "matchday": 8,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564701,
+    "date": "2026-10-11T16:30:00Z",
+    "matchday": 8,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564705,
+    "date": "2026-10-11T19:00:00Z",
+    "matchday": 8,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564704,
+    "date": "2026-10-12T19:00:00Z",
+    "matchday": 8,
+    "home_team": "Levante UD",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564716,
+    "date": "2026-10-16T19:00:00Z",
+    "matchday": 9,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564710,
+    "date": "2026-10-17T12:00:00Z",
+    "matchday": 9,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564708,
+    "date": "2026-10-17T14:15:00Z",
+    "matchday": 9,
+    "home_team": "Villarreal CF",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564713,
+    "date": "2026-10-17T16:30:00Z",
+    "matchday": 9,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564711,
+    "date": "2026-10-17T19:00:00Z",
+    "matchday": 9,
+    "home_team": "Valencia CF",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564715,
+    "date": "2026-10-18T12:00:00Z",
+    "matchday": 9,
+    "home_team": "CA Osasuna",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564712,
+    "date": "2026-10-18T14:15:00Z",
+    "matchday": 9,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564714,
+    "date": "2026-10-18T16:30:00Z",
+    "matchday": 9,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564709,
+    "date": "2026-10-18T19:00:00Z",
+    "matchday": 9,
+    "home_team": "Real Madrid CF",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564717,
+    "date": "2026-10-19T19:00:00Z",
+    "matchday": 9,
+    "home_team": "Getafe CF",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564685,
+    "date": "2026-10-21T18:00:00Z",
+    "matchday": 6,
+    "home_team": "Levante UD",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564718,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564719,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564720,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Athletic Club",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564721,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Sevilla FC",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564722,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Valencia CF",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564723,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "FC Barcelona",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564724,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564725,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564726,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564727,
+    "date": "2026-10-25T00:00:00Z",
+    "matchday": 10,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564736,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564737,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Villarreal CF",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564728,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Elche CF",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564729,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Athletic Club",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564730,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Levante UD",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564731,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564732,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "FC Barcelona",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564733,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Getafe CF",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564734,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564735,
+    "date": "2026-11-01T00:00:00Z",
+    "matchday": 11,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564738,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "Elche CF",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564739,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "CA Osasuna",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564740,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "Sevilla FC",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564741,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "Valencia CF",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564742,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564743,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564744,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564745,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564746,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564747,
+    "date": "2026-11-08T00:00:00Z",
+    "matchday": 12,
+    "home_team": "Villarreal CF",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564748,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Athletic Club",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564749,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "FC Barcelona",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564750,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564751,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564752,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "CA Osasuna",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564753,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Getafe CF",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564754,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Real Madrid CF",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564755,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564756,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Sevilla FC",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564757,
+    "date": "2026-11-22T00:00:00Z",
+    "matchday": 13,
+    "home_team": "Levante UD",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564758,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564759,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "Elche CF",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564760,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564761,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "Valencia CF",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564762,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "Real Madrid CF",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564763,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564764,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564765,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "Levante UD",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564766,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564767,
+    "date": "2026-11-29T00:00:00Z",
+    "matchday": 14,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564768,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "CA Osasuna",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564769,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Sevilla FC",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564770,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564771,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564772,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564773,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "FC Barcelona",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564774,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Getafe CF",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564775,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Athletic Club",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564776,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Villarreal CF",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564777,
+    "date": "2026-12-06T00:00:00Z",
+    "matchday": 15,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564778,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564779,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564780,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Real Madrid CF",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564781,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564782,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Levante UD",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564783,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Elche CF",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564784,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Villarreal CF",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564785,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564786,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564787,
+    "date": "2026-12-13T00:00:00Z",
+    "matchday": 16,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564788,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "Athletic Club",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564789,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "Getafe CF",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564790,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564791,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "Valencia CF",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564792,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "CA Osasuna",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564793,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "FC Barcelona",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564794,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564795,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564796,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564797,
+    "date": "2026-12-20T00:00:00Z",
+    "matchday": 17,
+    "home_team": "Sevilla FC",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564798,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Real Madrid CF",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564799,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564800,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Levante UD",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564801,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564802,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564803,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564804,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564805,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564806,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Villarreal CF",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564807,
+    "date": "2027-01-03T00:00:00Z",
+    "matchday": 18,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564808,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Athletic Club",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564809,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Elche CF",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564810,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Real Madrid CF",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564811,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "CA Osasuna",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564812,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564813,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564814,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564815,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Sevilla FC",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564816,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564817,
+    "date": "2027-01-10T00:00:00Z",
+    "matchday": 19,
+    "home_team": "Valencia CF",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564818,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564819,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "FC Barcelona",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564820,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Villarreal CF",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564821,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564822,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Levante UD",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564823,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564824,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Getafe CF",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564825,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564826,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564827,
+    "date": "2027-01-17T00:00:00Z",
+    "matchday": 20,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564828,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Real Madrid CF",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564829,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Getafe CF",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564830,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Valencia CF",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564831,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Elche CF",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564832,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564833,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564834,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564835,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "Athletic Club",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564836,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564837,
+    "date": "2027-01-24T00:00:00Z",
+    "matchday": 21,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564838,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564839,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564840,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564841,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564842,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "Villarreal CF",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564843,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "Levante UD",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564844,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "FC Barcelona",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564845,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "Sevilla FC",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564846,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "CA Osasuna",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564847,
+    "date": "2027-01-31T00:00:00Z",
+    "matchday": 22,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564848,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Athletic Club",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564849,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564850,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564851,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Elche CF",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564852,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564853,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Getafe CF",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564854,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564855,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564856,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "Valencia CF",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564857,
+    "date": "2027-02-07T00:00:00Z",
+    "matchday": 23,
+    "home_team": "FC Barcelona",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564858,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Sevilla FC",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564859,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "CA Osasuna",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564860,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564861,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Villarreal CF",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564862,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564863,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Elche CF",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564864,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Valencia CF",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564865,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Levante UD",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564866,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564867,
+    "date": "2027-02-14T00:00:00Z",
+    "matchday": 24,
+    "home_team": "Real Madrid CF",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564868,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564869,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564870,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "Villarreal CF",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564871,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "FC Barcelona",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564872,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "Athletic Club",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564873,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564874,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "Sevilla FC",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564875,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564876,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564877,
+    "date": "2027-02-21T00:00:00Z",
+    "matchday": 25,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564878,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564879,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Levante UD",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564880,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564881,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "CA Osasuna",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564882,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Real Madrid CF",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564883,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Getafe CF",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564884,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Athletic Club",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564885,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564886,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564887,
+    "date": "2027-02-28T00:00:00Z",
+    "matchday": 26,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564888,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "FC Barcelona",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564889,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Elche CF",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564890,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564891,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564892,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Sevilla FC",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564893,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564894,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Villarreal CF",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564895,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "Valencia CF",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564896,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564897,
+    "date": "2027-03-07T00:00:00Z",
+    "matchday": 27,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564898,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "CA Osasuna",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564899,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Elche CF",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564900,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564901,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Athletic Club",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564902,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564903,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564904,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564905,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Getafe CF",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564906,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "FC Barcelona",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564907,
+    "date": "2027-03-14T00:00:00Z",
+    "matchday": 28,
+    "home_team": "Real Madrid CF",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564908,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Villarreal CF",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564909,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Sevilla FC",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564910,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Levante UD",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564911,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564912,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564913,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564914,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564915,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564916,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Valencia CF",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564917,
+    "date": "2027-03-21T00:00:00Z",
+    "matchday": 29,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564918,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Levante UD",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564919,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "FC Barcelona",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564920,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564921,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Athletic Club",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564922,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564923,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564924,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Elche CF",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564925,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Real Madrid CF",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564926,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Getafe CF",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564927,
+    "date": "2027-04-04T00:00:00Z",
+    "matchday": 30,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564928,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564929,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564930,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Villarreal CF",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564931,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564932,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Valencia CF",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564933,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Sevilla FC",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564934,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564935,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564936,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "CA Osasuna",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564937,
+    "date": "2027-04-11T00:00:00Z",
+    "matchday": 31,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564938,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564939,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "FC Barcelona",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564940,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Levante UD",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564941,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564942,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564943,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564944,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Elche CF",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564945,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564946,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564947,
+    "date": "2027-04-18T00:00:00Z",
+    "matchday": 32,
+    "home_team": "Getafe CF",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564948,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Getafe CF",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564949,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Valencia CF",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564950,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564951,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "CA Osasuna",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564952,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Real Madrid CF",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564953,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Athletic Club",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564954,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564955,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Villarreal CF",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564956,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "Sevilla FC",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564957,
+    "date": "2027-04-21T00:00:00Z",
+    "matchday": 33,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564958,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564959,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564960,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564961,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "FC Barcelona",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564962,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564963,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564964,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564965,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "Elche CF",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564966,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "Levante UD",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564967,
+    "date": "2027-05-02T00:00:00Z",
+    "matchday": 34,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564968,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Valencia CF",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 564969,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "CA Osasuna",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564970,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564971,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Athletic Club",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564972,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 564973,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 564974,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564975,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Real Madrid CF",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564976,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Getafe CF",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564977,
+    "date": "2027-05-09T00:00:00Z",
+    "matchday": 35,
+    "home_team": "Villarreal CF",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564978,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 564979,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "Sevilla FC",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 564980,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 564981,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "Elche CF",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564982,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564983,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 564984,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "Levante UD",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564985,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Valencia CF"
+  },
+  {
+    "match_id": 564986,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "Real Madrid CF",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 564987,
+    "date": "2027-05-16T00:00:00Z",
+    "matchday": 36,
+    "home_team": "CA Osasuna",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564992,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Club Atl\u00e9tico de Madrid",
+    "away_team": "Athletic Club"
+  },
+  {
+    "match_id": 564993,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Deportivo Alav\u00e9s",
+    "away_team": "Real Madrid CF"
+  },
+  {
+    "match_id": 564994,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Sevilla FC",
+    "away_team": "Getafe CF"
+  },
+  {
+    "match_id": 564995,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Villarreal CF",
+    "away_team": "CA Osasuna"
+  },
+  {
+    "match_id": 564996,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Real Racing Club de Santander",
+    "away_team": "Levante UD"
+  },
+  {
+    "match_id": 564997,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "RC Deportivo La Coru\u00f1a",
+    "away_team": "RCD Espanyol de Barcelona"
+  },
+  {
+    "match_id": 564988,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Rayo Vallecano de Madrid",
+    "away_team": "Real Betis Balompi\u00e9"
+  },
+  {
+    "match_id": 564989,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "FC Barcelona",
+    "away_team": "M\u00e1laga CF"
+  },
+  {
+    "match_id": 564990,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "Valencia CF",
+    "away_team": "Elche CF"
+  },
+  {
+    "match_id": 564991,
+    "date": "2027-05-23T00:00:00Z",
+    "matchday": 37,
+    "home_team": "RC Celta de Vigo",
+    "away_team": "Real Sociedad de F\u00fatbol"
+  },
+  {
+    "match_id": 564998,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Levante UD",
+    "away_team": "RC Celta de Vigo"
+  },
+  {
+    "match_id": 564999,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Real Madrid CF",
+    "away_team": "RC Deportivo La Coru\u00f1a"
+  },
+  {
+    "match_id": 565000,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Real Betis Balompi\u00e9",
+    "away_team": "Club Atl\u00e9tico de Madrid"
+  },
+  {
+    "match_id": 565001,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Real Sociedad de F\u00fatbol",
+    "away_team": "Villarreal CF"
+  },
+  {
+    "match_id": 565002,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "M\u00e1laga CF",
+    "away_team": "Sevilla FC"
+  },
+  {
+    "match_id": 565003,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Elche CF",
+    "away_team": "Real Racing Club de Santander"
+  },
+  {
+    "match_id": 565004,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Athletic Club",
+    "away_team": "Rayo Vallecano de Madrid"
+  },
+  {
+    "match_id": 565005,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "RCD Espanyol de Barcelona",
+    "away_team": "Deportivo Alav\u00e9s"
+  },
+  {
+    "match_id": 565006,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "Getafe CF",
+    "away_team": "FC Barcelona"
+  },
+  {
+    "match_id": 565007,
+    "date": "2027-05-30T00:00:00Z",
+    "matchday": 38,
+    "home_team": "CA Osasuna",
+    "away_team": "Valencia CF"
+  }
+]

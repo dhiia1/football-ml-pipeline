@@ -27,6 +27,7 @@ TODO once this works:
 import argparse
 import yaml
 import pandas as pd
+import shutil
 from pathlib import Path
 from sklearn.metrics import accuracy_score
 from mlflow.tracking import MlflowClient
@@ -71,10 +72,10 @@ def get_latest_run(client: MlflowClient, experiment_name: str):
 def promote(client: MlflowClient, run, registry_name: str):
     """
     Register the run's model artifact as a new version of `registry_name`,
-    then point the "production" alias at it. If a version is already
-    aliased "production", this simply moves the pointer — the old version
-    still exists in the registry (nothing is deleted), just no longer
-    aliased.
+    point the "production" alias at it, and export a clean copy of just
+    that model into ./model_export/ — this is what the Docker build reads,
+    so the export always mechanically reflects whatever MLflow currently
+    aliases "production," with no manual copying step.
     """
     model_uri = f"runs:/{run.info.run_id}/model"
     model_version = mlflow.register_model(model_uri=model_uri, name=registry_name)
@@ -82,6 +83,15 @@ def promote(client: MlflowClient, run, registry_name: str):
         name=registry_name, alias=ALIAS, version=model_version.version
     )
     print(f"Promoted version {model_version.version} to alias '{ALIAS}'.")
+
+    export_path = ROOT / "model_export"
+    if export_path.exists():
+        shutil.rmtree(export_path)  # clear stale export before writing the new one
+    mlflow.artifacts.download_artifacts(
+        artifact_uri=f"models:/{registry_name}@{ALIAS}",
+        dst_path=str(export_path),
+    )
+    print(f"Exported production model to {export_path}")
 
 
 def main():

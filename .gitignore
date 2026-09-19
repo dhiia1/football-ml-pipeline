@@ -9,3 +9,4 @@ data/processed/*.html
 .venv/
 mlflow.db
 .pytest_cache/
+model_export/
