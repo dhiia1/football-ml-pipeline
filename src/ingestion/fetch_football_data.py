@@ -14,6 +14,7 @@ TODO once this works:
 - Add retry/backoff for rate limits (free tier is limited requests/min).
 - Consider also pulling standings/team data for extra features.
 """
+
 import os
 import json
 import yaml

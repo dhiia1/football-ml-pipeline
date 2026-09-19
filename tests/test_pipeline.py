@@ -7,6 +7,7 @@ about testing that the pipeline code still runs and produces sane shapes).
 Run:
     pytest tests/
 """
+
 import pandas as pd
 from pathlib import Path
 import sys
@@ -47,16 +48,24 @@ def test_chronological_ordering_preserved():
     fake_raw = {
         "matches": [
             {
-                "id": 1, "status": "FINISHED", "utcDate": "2026-02-01T15:00:00Z",
-                "homeTeam": {"name": "A"}, "awayTeam": {"name": "B"},
+                "id": 1,
+                "status": "FINISHED",
+                "utcDate": "2026-02-01T15:00:00Z",
+                "homeTeam": {"name": "A"},
+                "awayTeam": {"name": "B"},
                 "score": {"fullTime": {"home": 1, "away": 1}},
             },
             {
-                "id": 2, "status": "FINISHED", "utcDate": "2026-01-01T15:00:00Z",
-                "homeTeam": {"name": "A"}, "awayTeam": {"name": "B"},
+                "id": 2,
+                "status": "FINISHED",
+                "utcDate": "2026-01-01T15:00:00Z",
+                "homeTeam": {"name": "A"},
+                "awayTeam": {"name": "B"},
                 "score": {"fullTime": {"home": 0, "away": 2}},
             },
         ]
     }
     df = matches_to_dataframe(fake_raw)
-    assert df.iloc[0]["date"] < df.iloc[1]["date"], "Rows must be sorted chronologically"
+    assert (
+        df.iloc[0]["date"] < df.iloc[1]["date"]
+    ), "Rows must be sorted chronologically"

@@ -23,6 +23,7 @@ TODO once this works:
 - Add a log_loss comparison too, not just accuracy — a model could win on
   accuracy while being worse-calibrated (see PROMOTION_METRIC below).
 """
+
 import argparse
 import yaml
 import pandas as pd
@@ -61,7 +62,9 @@ def get_latest_run(client: MlflowClient, experiment_name: str):
         max_results=1,
     )
     if not runs:
-        raise RuntimeError("Experiment exists but has no runs yet — run train.py first.")
+        raise RuntimeError(
+            "Experiment exists but has no runs yet — run train.py first."
+        )
     return runs[0]
 
 
@@ -84,9 +87,10 @@ def promote(client: MlflowClient, run, registry_name: str):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--force", action="store_true",
+        "--force",
+        action="store_true",
         help="Promote the latest run regardless of baseline. For testing the "
-             "registry/serving wiring only — never use this for a real decision."
+        "registry/serving wiring only — never use this for a real decision.",
     )
     args = parser.parse_args()
 
@@ -115,10 +119,14 @@ def main():
         print("Model beats baseline — promoting.")
         promote(client, latest_run, CONFIG["model"]["registry_name"])
     elif args.force:
-        print("Model does NOT beat baseline, but --force was passed — promoting anyway (TEST ONLY).")
+        print(
+            "Model does NOT beat baseline, but --force was passed — promoting anyway (TEST ONLY)."
+        )
         promote(client, latest_run, CONFIG["model"]["registry_name"])
     else:
-        print("Model does NOT beat baseline — holding. Current production model (if any) stays live.")
+        print(
+            "Model does NOT beat baseline — holding. Current production model (if any) stays live."
+        )
 
 
 if __name__ == "__main__":

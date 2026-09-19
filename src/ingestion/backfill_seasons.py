@@ -14,6 +14,7 @@ TODO once this works:
   competitions, the sleep between calls below already handles it, but bump
   SLEEP_SECONDS up if you see 429 responses.
 """
+
 import os
 import time
 import json
@@ -55,8 +56,11 @@ def save_snapshot(data: dict, raw_dir: Path, season: int) -> Path:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--seasons", type=int, nargs="+", required=True,
-        help="Season start years to backfill, e.g. --seasons 2024 2025"
+        "--seasons",
+        type=int,
+        nargs="+",
+        required=True,
+        help="Season start years to backfill, e.g. --seasons 2024 2025",
     )
     args = parser.parse_args()
 

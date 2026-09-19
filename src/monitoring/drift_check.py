@@ -27,6 +27,7 @@ TODO once this works:
   training," rather than just splitting the dataset in half.
 - Wire this into pipelines/flow.py as a step after evaluate.
 """
+
 import yaml
 import pandas as pd
 from pathlib import Path
@@ -36,7 +37,7 @@ from evidently.presets import DataDriftPreset
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG = yaml.safe_load(open(ROOT / "config" / "config.yaml"))
 
-FEATURE_COLS = ["home_form", "away_form"]
+FEATURE_COLS = ["home_form", "away_form", "h2h_home_advantage", "home_elo", "away_elo"]
 
 
 def main():

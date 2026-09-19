@@ -21,6 +21,7 @@ TODO once this works:
   detected (e.g. trigger a Slack/email alert, or force a retrain even
   if evaluate.py would otherwise hold).
 """
+
 from prefect import flow, task
 import subprocess
 import sys
@@ -31,8 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def run_script(relative_path: str):
     result = subprocess.run(
-        [sys.executable, str(ROOT / relative_path)],
-        capture_output=True, text=True
+        [sys.executable, str(ROOT / relative_path)], capture_output=True, text=True
     )
     print(result.stdout)
     if result.returncode != 0:

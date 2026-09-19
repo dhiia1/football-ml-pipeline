@@ -25,6 +25,7 @@ TODO once this works:
 - Add request logging (predictions + inputs) so the monitoring stage has
   something to compare against actual outcomes later.
 """
+
 import yaml
 import mlflow
 import mlflow.sklearn
