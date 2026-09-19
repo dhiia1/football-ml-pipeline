@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+mlruns/
+data/raw/*.json
+data/processed/*.parquet
+data/processed/*.html
+.pytest_cache/
+.venv/
+mlflow.db
+.pytest_cache/

@@ -1,0 +1,29 @@
+[project]
+name = "football-ml-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "dhiia1", email = "dhia.mrabet@ensi-uma.tn" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "evidently>=0.7.23",
+    "fastapi>=0.141.1",
+    "mlflow>=3.16.1",
+    "pandas>=3.0.6",
+    "prefect>=3.8.6",
+    "pyarrow>=25.0.1",
+    "pytest>=9.1.1",
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
+    "scikit-learn>=1.9.1",
+    "uvicorn[standard]>=0.53.0",
+]
+
+[project.scripts]
+football-ml-pipeline = "football_ml_pipeline:main"
+
+[build-system]
+requires = ["uv_build>=0.12.11,<0.13.0"]
+build-backend = "uv_build"

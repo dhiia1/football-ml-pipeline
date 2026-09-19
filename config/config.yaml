@@ -1,0 +1,19 @@
+# Which competition to pull. See https://www.football-data.org/documentation/api
+# for codes (PL = Premier League, PD = La Liga, BL1 = Bundesliga, SA = Serie A...)
+competition_code: "PD"
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+
+features:
+  rolling_form_window: 5   # last N matches used to compute form
+  min_matches_for_prediction: 5  # skip teams with too little history
+
+model:
+  target: "result"   # H (home win) / D (draw) / A (away win)
+  registry_name: "football-outcome-classifier"
+  experiment_name: "football-outcome-prediction"
+
+evaluation:
+  baseline_strategy: "always_home_win"  # the bar a new model must beat
