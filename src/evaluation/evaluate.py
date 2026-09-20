@@ -23,11 +23,9 @@ TODO once this works:
 - Add a log_loss comparison too, not just accuracy — a model could win on
   accuracy while being worse-calibrated (see PROMOTION_METRIC below).
 """
-
 import argparse
 import yaml
 import pandas as pd
-import shutil
 from pathlib import Path
 from sklearn.metrics import accuracy_score
 from mlflow.tracking import MlflowClient
@@ -63,19 +61,32 @@ def get_latest_run(client: MlflowClient, experiment_name: str):
         max_results=1,
     )
     if not runs:
-        raise RuntimeError(
-            "Experiment exists but has no runs yet — run train.py first."
-        )
+        raise RuntimeError("Experiment exists but has no runs yet — run train.py first.")
     return runs[0]
+
+
+def get_current_champion_accuracy(client: MlflowClient, registry_name: str) -> float | None:
+    """
+    Return the accuracy of whatever model currently holds the "production"
+    alias — the real bar a new model needs to clear. Returns None if
+    nothing has ever been promoted yet (first-ever promotion just needs to
+    clear the sanity floor below).
+    """
+    try:
+        current = client.get_model_version_by_alias(registry_name, ALIAS)
+    except Exception:
+        return None  # no registered model / no alias set yet — first promotion
+    run = client.get_run(current.run_id)
+    return run.data.metrics.get(PROMOTION_METRIC)
 
 
 def promote(client: MlflowClient, run, registry_name: str):
     """
     Register the run's model artifact as a new version of `registry_name`,
-    point the "production" alias at it, and export a clean copy of just
-    that model into ./model_export/ — this is what the Docker build reads,
-    so the export always mechanically reflects whatever MLflow currently
-    aliases "production," with no manual copying step.
+    then point the "production" alias at it. If a version is already
+    aliased "production", this simply moves the pointer — the old version
+    still exists in the registry (nothing is deleted), just no longer
+    aliased.
     """
     model_uri = f"runs:/{run.info.run_id}/model"
     model_version = mlflow.register_model(model_uri=model_uri, name=registry_name)
@@ -84,23 +95,13 @@ def promote(client: MlflowClient, run, registry_name: str):
     )
     print(f"Promoted version {model_version.version} to alias '{ALIAS}'.")
 
-    export_path = ROOT / "model_export"
-    if export_path.exists():
-        shutil.rmtree(export_path)  # clear stale export before writing the new one
-    mlflow.artifacts.download_artifacts(
-        artifact_uri=f"models:/{registry_name}@{ALIAS}",
-        dst_path=str(export_path),
-    )
-    print(f"Exported production model to {export_path}")
-
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--force",
-        action="store_true",
+        "--force", action="store_true",
         help="Promote the latest run regardless of baseline. For testing the "
-        "registry/serving wiring only — never use this for a real decision.",
+             "registry/serving wiring only — never use this for a real decision."
     )
     args = parser.parse_args()
 
@@ -125,18 +126,27 @@ def main():
     print(f"Baseline ('always home win') accuracy: {baseline_acc:.3f}")
     print(f"Latest run accuracy: {model_acc:.3f}  (run_id={latest_run.info.run_id})")
 
-    if model_acc > baseline_acc:
-        print("Model beats baseline — promoting.")
+    beats_floor = model_acc > baseline_acc
+    champion_acc = get_current_champion_accuracy(client, CONFIG["model"]["registry_name"])
+
+    if champion_acc is not None:
+        print(f"Current production model accuracy: {champion_acc:.3f}")
+        beats_champion = model_acc > champion_acc
+    else:
+        print("No production model exists yet — this would be the first promotion.")
+        beats_champion = True  # nothing to beat yet, floor check alone decides
+
+    if beats_floor and beats_champion:
+        reason = "beats baseline and current production model" if champion_acc is not None else "beats baseline (first promotion)"
+        print(f"Model {reason} — promoting.")
         promote(client, latest_run, CONFIG["model"]["registry_name"])
     elif args.force:
-        print(
-            "Model does NOT beat baseline, but --force was passed — promoting anyway (TEST ONLY)."
-        )
+        print("Model does NOT clear the bar, but --force was passed — promoting anyway (TEST ONLY).")
         promote(client, latest_run, CONFIG["model"]["registry_name"])
+    elif not beats_floor:
+        print("Model does NOT beat the baseline sanity floor — holding. Something may be broken.")
     else:
-        print(
-            "Model does NOT beat baseline — holding. Current production model (if any) stays live."
-        )
+        print("Model beats baseline but does NOT beat the current production model — holding.")
 
 
 if __name__ == "__main__":

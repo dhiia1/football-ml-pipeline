@@ -12,17 +12,64 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: uv sync --frozen
 
-      - name: Run tests
-        run: pytest tests/ -v
+      - name: Run unit tests
+        run: uv run pytest tests/ -v
 
-      # TODO: once evaluate.py compares against MLflow directly, add a step
-      # here that fails the build if a newly trained model doesn't beat the
-      # baseline — that's the real "ML gate" beyond just code tests.
+  quality-gate:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Fetch current season data
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: uv run python src/ingestion/fetch_football_data.py
+
+      - name: Build features
+        run: uv run python -m src.features.build_features
+
+      - name: Train a fresh model (CI-local — never touches your real MLflow registry)
+        run: uv run python src/training/train.py
+
+      - name: Check the model beats a dumb baseline
+        run: |
+          uv run python -c "
+          import pandas as pd
+          from pathlib import Path
+          from sklearn.metrics import accuracy_score
+          from mlflow.tracking import MlflowClient
+          import mlflow
+          import yaml
+
+          ROOT = Path('.')
+          CONFIG = yaml.safe_load(open(ROOT / 'config' / 'config.yaml'))
+
+          df = pd.read_parquet(ROOT / 'data' / 'processed' / 'features.parquet')
+          test_frac = 0.2
+          split_idx = int(len(df) * (1 - test_frac))
+          test_df = df.sort_values('date').iloc[split_idx:]
+          baseline_acc = accuracy_score(test_df[CONFIG['model']['target']], ['H'] * len(test_df))
+
+          mlflow.set_tracking_uri('sqlite:///' + str(ROOT / 'mlflow.db'))
+          client = MlflowClient()
+          experiment = client.get_experiment_by_name(CONFIG['model']['experiment_name'])
+          runs = client.search_runs(experiment_ids=[experiment.experiment_id], order_by=['start_time DESC'], max_results=1)
+          model_acc = runs[0].data.metrics.get('accuracy')
+
+          print(f'Baseline: {baseline_acc:.3f}  |  Model: {model_acc:.3f}')
+          assert model_acc > baseline_acc, f'Model ({model_acc:.3f}) does not beat baseline ({baseline_acc:.3f}) — pipeline may be broken.'
+          print('PASS: model beats sanity-floor baseline.')
+          "
