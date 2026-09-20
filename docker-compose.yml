@@ -1,0 +1,23 @@
+# Two independent services, wired together for local development:
+#   api — the FastAPI prediction service (existing Dockerfile)
+#   ui  — static frontend served by nginx (ui/Dockerfile)
+#
+# The browser (not Docker's internal network) is what actually calls the
+# API, since script.js runs client-side — so API_BASE in script.js must
+# stay pointed at the HOST-published port (localhost:8000), not the
+# compose service name "api". Service-name resolution (http://api:8000)
+# only works for container-to-container calls, which isn't what's
+# happening here.
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+
+  ui:
+    build: ./ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - api

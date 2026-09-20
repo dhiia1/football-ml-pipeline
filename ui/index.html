@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pitchcast — match predictions</title>
+
+<!--
+  ===========================================================================
+  WHERE TO CONFIGURE THINGS
+  ---------------------------------------------------------------------------
+  API_BASE and LOGO_DIR are both at the very top of script.js.
+  App name / tagline: the .brand block a few lines below.
+  Fonts: the Google Fonts <link> below. Delete it for a fully offline
+  build — style.css falls back to a system sans stack on its own.
+  ===========================================================================
+-->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E3A2A'/%3E%3Cg fill='none' stroke='%23F4F6F2' stroke-width='1.6'%3E%3Crect x='5' y='8' width='22' height='16' rx='2'/%3E%3Cpath d='M16 8v16'/%3E%3Ccircle cx='16' cy='16' r='3.6'/%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="field-lines" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+        <rect x="1.75" y="4.25" width="20.5" height="15.5" rx="2.5"/>
+        <path d="M12 4.25v15.5"/>
+        <circle cx="12" cy="12" r="3.3"/>
+      </svg>
+    </span>
+    <span class="brand-text">
+      <span class="brand-name">Pitchcast</span>
+      <span class="brand-tag">Match predictions and odds</span>
+    </span>
+  </div>
+</header>
+
+<main class="shell">
+
+  <div class="tabs" role="tablist" aria-label="Choose a view">
+    <button class="tab is-active" role="tab" id="tab-round" aria-controls="view-round" aria-selected="true" data-view="round">Round</button>
+    <button class="tab" role="tab" id="tab-h2h" aria-controls="view-h2h" aria-selected="false" tabindex="-1" data-view="h2h">Head to head</button>
+    <button class="tab" role="tab" id="tab-next" aria-controls="view-next" aria-selected="false" tabindex="-1" data-view="next">Next match</button>
+  </div>
+
+  <!-- ─────────────────────────── Round ─────────────────────────── -->
+  <section class="view is-active" id="view-round" role="tabpanel" aria-labelledby="tab-round" tabindex="0">
+    <div class="controls">
+      <div class="field">
+        <label class="field-label" for="md-select">Matchday</label>
+        <div class="stepper">
+          <button class="step-btn" id="md-prev" type="button" aria-label="Previous matchday">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 8h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+          <select class="select select-narrow" id="md-select"></select>
+          <button class="step-btn" id="md-next" type="button" aria-label="Next matchday">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 4v8M4 8h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </div>
+      <p class="round-tally" id="round-tally" role="status"></p>
+    </div>
+    <div id="round-output"></div>
+  </section>
+
+  <!-- ────────────────────────── Head to head ───────────────────── -->
+  <section class="view view-narrow" id="view-h2h" role="tabpanel" aria-labelledby="tab-h2h" tabindex="0" hidden>
+    <div class="controls controls-pair">
+      <div class="field field-grow">
+        <label class="field-label" for="h2h-home">Home team</label>
+        <select class="select" id="h2h-home"></select>
+      </div>
+      <button class="swap-btn" id="h2h-swap" type="button" aria-label="Swap home and away">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 7h12l-3-3M17 13H5l3 3"/>
+        </svg>
+      </button>
+      <div class="field field-grow">
+        <label class="field-label" for="h2h-away">Away team</label>
+        <select class="select" id="h2h-away"></select>
+      </div>
+      <button class="btn" id="h2h-go" type="button">Predict</button>
+    </div>
+    <p class="hint" id="h2h-hint" role="status"></p>
+    <div id="h2h-output" class="featured-slot"></div>
+  </section>
+
+  <!-- ────────────────────────── Next match ─────────────────────── -->
+  <section class="view view-narrow" id="view-next" role="tabpanel" aria-labelledby="tab-next" tabindex="0" hidden>
+    <div class="controls">
+      <div class="field field-grow">
+        <label class="field-label" for="next-team">Team</label>
+        <select class="select" id="next-team"></select>
+      </div>
+    </div>
+    <div id="next-output" class="featured-slot"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Kick-off times are shown in your own timezone. Probabilities come straight from the model behind the API.</p>
+</footer>
+
+<noscript>
+  <p class="noscript">Pitchcast needs JavaScript to read predictions from the API.</p>
+</noscript>
+
+<script src="script.js" defer></script>
+</body>
+</html>

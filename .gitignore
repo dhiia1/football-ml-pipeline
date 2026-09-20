@@ -2,11 +2,11 @@
 __pycache__/
 *.pyc
 mlruns/
+mlflow.db
+model_export/
 data/raw/*.json
 data/processed/*.parquet
+data/processed/*.json
 data/processed/*.html
 .pytest_cache/
 .venv/
-mlflow.db
-.pytest_cache/
-model_export/

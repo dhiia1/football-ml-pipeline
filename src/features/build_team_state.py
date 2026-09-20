@@ -21,13 +21,12 @@ Run manually, after build_features.py:
     uv run python src/features/build_team_state.py
 
 TODO once this works:
-- h2h between two specific teams isn't precomputed here — serving
-  computes it on demand from the historical matches, since it depends on
-  WHICH two teams are asked about, not a single team snapshot.
+- h2h between two specific teams isn't precomputed here — serving will
+  need to compute it on demand from the historical matches, since it
+  depends on WHICH two teams are asked about, not a single team snapshot.
 - Re-run this alongside build_features.py in the Prefect flow, since both
   depend on the same raw snapshots being fresh.
 """
-
 import json
 import yaml
 import pandas as pd
@@ -54,15 +53,13 @@ def extract_scheduled_matches(matches: list) -> list:
     for m in matches:
         if m.get("status") not in ("SCHEDULED", "TIMED"):
             continue
-        scheduled.append(
-            {
-                "match_id": m["id"],
-                "date": m["utcDate"],
-                "matchday": m.get("matchday"),
-                "home_team": m["homeTeam"]["name"],
-                "away_team": m["awayTeam"]["name"],
-            }
-        )
+        scheduled.append({
+            "match_id": m["id"],
+            "date": m["utcDate"],
+            "matchday": m.get("matchday"),
+            "home_team": m["homeTeam"]["name"],
+            "away_team": m["awayTeam"]["name"],
+        })
     return sorted(scheduled, key=lambda x: x["date"])
 
 
@@ -103,18 +100,29 @@ def main():
     all_matches = load_all_snapshots(raw_dir)
 
     finished_df = matches_to_dataframe(all_matches)
-    finished_df = add_rolling_form(
-        finished_df, CONFIG["features"]["rolling_form_window"]
-    )
+    finished_df = add_rolling_form(finished_df, CONFIG["features"]["rolling_form_window"])
     finished_df = add_elo_ratings(finished_df)
 
     team_state = build_team_state(finished_df)
+
+    scheduled = extract_scheduled_matches(all_matches)
+
+    # Backfilled seasons include teams no longer in the league this season
+    # (relegated/promoted). Only teams with an UPCOMING fixture are
+    # actually in the current season — filter team_state down to those,
+    # so serving never predicts using stale data for a team that's left
+    # the league.
+    current_teams = {f["home_team"] for f in scheduled} | {f["away_team"] for f in scheduled}
+    dropped = set(team_state) - current_teams
+    if dropped:
+        print(f"Dropping {len(dropped)} team(s) not in the current season: {sorted(dropped)}")
+    team_state = {team: stats for team, stats in team_state.items() if team in current_teams}
+
     team_state_path = processed_dir / "team_state.json"
     with open(team_state_path, "w") as f:
         json.dump(team_state, f, indent=2)
     print(f"Saved current state for {len(team_state)} teams to {team_state_path}")
 
-    scheduled = extract_scheduled_matches(all_matches)
     fixtures_path = processed_dir / "upcoming_fixtures.json"
     with open(fixtures_path, "w") as f:
         json.dump(scheduled, f, indent=2)

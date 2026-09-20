@@ -1,0 +1,13 @@
+# Serves the static UI files (index.html, script.js, style.css, assets/)
+# via nginx. This is intentionally a separate image from the API — the
+# two are independent services communicating over HTTP, not a monolith.
+
+FROM nginx:alpine
+
+# Remove nginx's default placeholder page
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy the static site as-is
+COPY . /usr/share/nginx/html/
+
+EXPOSE 80

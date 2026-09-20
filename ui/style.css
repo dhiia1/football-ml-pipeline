@@ -1,0 +1,702 @@
+/* ==========================================================================
+   Pitchcast — stylesheet
+   --------------------------------------------------------------------------
+   Sections: 1 tokens · 2 reset · 3 page frame · 4 header · 5 tabs
+             6 controls · 7 match card · 8 probability bar · 9 states
+             10 responsive
+   Colour logic: the three data colours (home / draw / away) are reserved for
+   data only. Buttons and controls stay chalk-on-ink so nothing competes with
+   the verdict band or the probability bar.
+   ========================================================================== */
+
+/* 1 ── tokens ─────────────────────────────────────────────────────────── */
+:root {
+  /* the field */
+  --pitch:        #0E3A2A;
+  --pitch-deep:   #092A1E;
+  --pitch-line:   rgba(244, 246, 242, .07);
+  --chalk:        #F4F6F2;
+  --chalk-dim:    rgba(244, 246, 242, .72);
+  --chalk-faint:  rgba(244, 246, 242, .42);
+
+  /* the cards */
+  --card:         #FFFFFF;
+  --ink:          #13211C;
+  --ink-soft:     #5A6B63;
+  --ink-faint:    #8C9A93;
+  --rule:         rgba(19, 33, 28, .11);
+  --rule-strong:  rgba(19, 33, 28, .22);
+
+  /* the data */
+  --home:         #E5462E;
+  --draw:         #F0B429;
+  --away:         #00A19A;
+  --on-home:      #FFFFFF;
+  --on-draw:      #2A2007;
+  --on-away:      #FFFFFF;
+
+  --r-lg: 20px;
+  --r-md: 13px;
+  --r-sm: 9px;
+  --r-pill: 999px;
+
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* 2 ── reset ──────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--chalk);
+  background:
+    radial-gradient(120% 80% at 50% -10%, #12472F 0%, transparent 60%),
+    linear-gradient(180deg, var(--pitch) 0%, var(--pitch-deep) 100%);
+  background-color: var(--pitch-deep);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, select { font: inherit; color: inherit; }
+svg { display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--draw);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* 3 ── page frame ─────────────────────────────────────────────────────── */
+
+/* one quiet flourish: halfway line + centre circle, chalk on grass */
+.field-lines {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to right,
+      transparent calc(50% - 1px), var(--pitch-line) 50%, transparent calc(50% + 1px)),
+    radial-gradient(circle at 50% 46%,
+      transparent 199px, var(--pitch-line) 200px, transparent 201px);
+}
+
+.shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 72px;
+}
+
+/* 4 ── header ─────────────────────────────────────────────────────────── */
+.topbar {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 24px 26px;
+}
+
+.brand { display: flex; align-items: center; gap: 13px; }
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  border: 1px solid var(--chalk-faint);
+  border-radius: var(--r-md);
+  color: var(--chalk);
+}
+.brand-mark svg { width: 22px; height: 22px; }
+
+.brand-text { display: flex; flex-direction: column; }
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -.015em;
+  line-height: 1.1;
+}
+
+.brand-tag {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--chalk-dim);
+}
+
+/* 5 ── tabs ───────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 26px;
+  background: rgba(244, 246, 242, .07);
+  border: 1px solid rgba(244, 246, 242, .1);
+  border-radius: var(--r-pill);
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--chalk-dim);
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .18s var(--ease), color .18s var(--ease);
+}
+.tab:hover { background: rgba(244, 246, 242, .08); color: var(--chalk); }
+
+.tab.is-active {
+  background: var(--chalk);
+  color: var(--pitch-deep);
+  font-weight: 600;
+}
+.tab.is-active:hover { background: var(--chalk); }
+
+.view { animation: none; }
+.view[hidden] { display: none; }
+.view:focus { outline: none; }
+
+/* 6 ── controls ───────────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field-grow { flex: 1 1 200px; }
+
+.field-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--chalk-dim);
+  padding-left: 2px;
+}
+
+.select {
+  appearance: none;
+  width: 100%;
+  padding: 11px 38px 11px 14px;
+  border: 1px solid rgba(244, 246, 242, .18);
+  border-radius: var(--r-md);
+  background-color: rgba(244, 246, 242, .06);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 4.5 6 8l3.5-3.5' fill='none' stroke='%23F4F6F2' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 13px center;
+  background-size: 12px;
+  color: var(--chalk);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color .18s var(--ease), background-color .18s var(--ease);
+}
+.select:hover { border-color: rgba(244, 246, 242, .34); }
+.select option { color: #13211C; background: #fff; }
+
+.select-narrow { width: 88px; padding-right: 32px; text-align: left; }
+
+.stepper { display: flex; align-items: center; gap: 6px; }
+
+.step-btn {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  flex: none;
+  border: 1px solid rgba(244, 246, 242, .18);
+  border-radius: var(--r-md);
+  background: rgba(244, 246, 242, .06);
+  color: var(--chalk);
+  cursor: pointer;
+  transition: background .18s var(--ease), border-color .18s var(--ease);
+}
+.step-btn svg { width: 16px; height: 16px; }
+.step-btn:hover:not(:disabled) { background: rgba(244, 246, 242, .14); border-color: rgba(244, 246, 242, .34); }
+.step-btn:disabled { opacity: .32; cursor: not-allowed; }
+
+.swap-btn {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  flex: none;
+  border: 1px solid rgba(244, 246, 242, .18);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--chalk-dim);
+  cursor: pointer;
+  transition: transform .3s var(--ease), color .18s var(--ease), border-color .18s var(--ease);
+}
+.swap-btn svg { width: 19px; height: 19px; }
+.swap-btn:hover { color: var(--chalk); border-color: rgba(244, 246, 242, .4); }
+.swap-btn.is-turning { transform: rotate(180deg); }
+
+.btn {
+  padding: 11px 24px;
+  height: 42px;
+  border: 0;
+  border-radius: var(--r-md);
+  background: var(--chalk);
+  color: var(--pitch-deep);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .14s var(--ease), box-shadow .18s var(--ease), opacity .18s var(--ease);
+}
+.btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .6); }
+.btn:active:not(:disabled) { transform: translateY(0); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+
+.hint {
+  margin: -10px 0 18px;
+  font-size: 13.5px;
+  color: var(--draw);
+  min-height: 1em;
+}
+
+.round-tally {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 2px auto;
+}
+.tally-chip {
+  display: inline-block;
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  background: rgba(244, 246, 242, .08);
+  color: var(--chalk-dim);
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.tally-chip b { font-weight: 700; color: var(--chalk); }
+
+/* ── the round grid ───────────────────────────────────────────────────── */
+.round-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+  gap: 16px;
+}
+
+/* 7 ── match card ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  transition: border-color .2s var(--ease), transform .2s var(--ease);
+}
+.round-grid .card:hover {
+  border-color: var(--rule-strong);
+  transform: translateY(-2px);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.kickoff {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+.kickoff-none { color: var(--ink-faint); font-style: italic; }
+
+/* matchday sits in a box, the way it does on a printed fixture list */
+.md-box {
+  flex: none;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-sm);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+}
+.md-box b {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+/* teams — compact card lists them vertically so long names never truncate */
+.teams { display: flex; flex-direction: column; gap: 9px; margin-bottom: 15px; }
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.team-name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -.005em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.team.is-favoured .team-name { font-weight: 700; }
+.team:not(.is-favoured) .team-name { color: var(--ink-soft); }
+
+.team-side {
+  flex: none;
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-faint);
+}
+
+/* crest, and its fallback badge — the badge is the design, not an error */
+.crest {
+  flex: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: rgba(19, 33, 28, .04);
+}
+
+.crest-badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1px solid;
+  font-size: 10.5px;
+  font-weight: 700;
+  font-stretch: 88%;
+  letter-spacing: .01em;
+  user-select: none;
+}
+
+/* 8 ── verdict band + probability bar ────────────────────────────────── */
+.verdict {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border-radius: var(--r-md);
+  margin-bottom: 14px;
+}
+.verdict-home { background: var(--home); color: var(--on-home); }
+.verdict-draw { background: var(--draw); color: var(--on-draw); }
+.verdict-away { background: var(--away); color: var(--on-away); }
+
+.verdict-label {
+  position: relative;
+  font-size: 17px;
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+}
+
+/* sits right after the label, not at the right edge — the glyph lives there */
+.verdict-pct {
+  position: relative;
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  opacity: .82;
+}
+
+/* 1 / X / 2 — the coupon notation, ghosted into the band */
+.verdict-glyph {
+  position: absolute;
+  right: 12px;
+  bottom: -14px;
+  font-size: 58px;
+  font-weight: 800;
+  font-stretch: 125%;
+  line-height: 1;
+  opacity: .17;
+  pointer-events: none;
+}
+
+/* One continuous strip: widths are set inline as exact percentages, so no
+   flex gap and no flex-shrink — either would quietly skew the proportions. */
+.bar {
+  display: flex;
+  height: 9px;
+  margin-bottom: 9px;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+  background: rgba(19, 33, 28, .06);
+  clip-path: inset(0 0 0 0);
+  animation: bar-fill .62s var(--ease) both;
+}
+.bar-seg {
+  flex: none;
+  transition: filter .18s var(--ease);
+}
+/* hairline in the card colour, drawn outside the box so widths stay honest */
+.bar-seg + .bar-seg { box-shadow: -1.5px 0 0 var(--card); }
+.bar-seg:hover { filter: brightness(1.14); }
+.seg-home { background: var(--home); }
+.seg-draw { background: var(--draw); }
+.seg-away { background: var(--away); }
+
+@keyframes bar-fill {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+/* legend order matches the bar: away, draw, home */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.legend-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.legend-item:nth-child(2) { align-items: center; text-align: center; }
+.legend-item:nth-child(3) { align-items: flex-end; text-align: right; }
+
+.legend-pct {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.01em;
+}
+.legend-dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.legend-name { font-size: 11.5px; color: var(--ink-faint); }
+
+/* ── featured variant: head to head + next match ─────────────────────── */
+
+/* a lone card shouldn't stretch the full 1120px — it goes sparse and the
+   verdict band turns into a billboard */
+.featured-slot { max-width: 720px; }
+
+/* the single-card views read as one column: controls and card share a width */
+.view-narrow .controls,
+.view-narrow .hint { max-width: 720px; }
+
+.card-featured { padding: 26px; }
+
+.card-featured .card-head { margin-bottom: 20px; }
+
+.matchup {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.matchup-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  text-align: center;
+  min-width: 0;
+}
+
+.matchup-side .crest,
+.matchup-side .crest-badge {
+  width: 66px; height: 66px;
+}
+.matchup-side .crest-badge { font-size: 20px; border-width: 1.5px; }
+
+.matchup-name {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -.015em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.matchup-side.is-favoured .matchup-name { font-weight: 800; }
+.matchup-side:not(.is-favoured) .matchup-name { color: var(--ink-soft); }
+
+.matchup-role { font-size: 11.5px; color: var(--ink-faint); }
+
+.matchup-vs {
+  align-self: center;
+  padding-top: 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-faint);
+}
+
+.card-featured .verdict { padding: 14px 18px; margin-bottom: 18px; }
+.card-featured .verdict-label { font-size: 26px; }
+.card-featured .verdict-pct { font-size: 19px; }
+.card-featured .verdict-glyph { font-size: 86px; right: 16px; bottom: -22px; }
+.card-featured .bar { height: 13px; margin-bottom: 11px; }
+.card-featured .legend-pct { font-size: 19px; }
+.card-featured .legend-name { font-size: 12.5px; }
+
+/* 9 ── loading, empty and error states ───────────────────────────────── */
+.sk {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  padding: 16px;
+}
+.sk-featured { padding: 24px; }
+
+.sk-line {
+  border-radius: var(--r-pill);
+  background: rgba(19, 33, 28, .07);
+  animation: sk-pulse 1.4s ease-in-out infinite;
+}
+.sk-line + .sk-line { margin-top: 10px; }
+.sk-w40 { width: 40%; height: 11px; }
+.sk-w70 { width: 70%; height: 17px; }
+.sk-w55 { width: 55%; height: 17px; }
+/* doubled class keeps these from losing to `.sk-line + .sk-line` above */
+.sk-line.sk-block { width: 100%; height: 38px; border-radius: var(--r-md); margin-top: 18px; }
+.sk-line.sk-bar   { width: 100%; height: 9px; margin-top: 16px; }
+
+@keyframes sk-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+
+.notice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 620px;
+  padding: 30px 26px;
+  border: 1px dashed rgba(244, 246, 242, .22);
+  border-radius: var(--r-lg);
+  background: rgba(244, 246, 242, .04);
+}
+.notice-mark {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  margin-bottom: 4px;
+  border-radius: var(--r-sm);
+  background: rgba(244, 246, 242, .1);
+  color: var(--chalk);
+}
+.notice-mark svg { width: 18px; height: 18px; }
+.notice-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  font-stretch: 106%;
+  letter-spacing: -.015em;
+}
+.notice-body {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 14.5px;
+  color: var(--chalk-dim);
+}
+.notice-body code {
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: rgba(244, 246, 242, .1);
+  font-size: 13px;
+}
+.notice .btn { margin-top: 8px; }
+
+.notice-error .notice-mark { background: rgba(229, 70, 46, .22); color: #FFB3A5; }
+.notice-error { border-color: rgba(229, 70, 46, .35); }
+
+.footer {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+/* pseudo-element rather than border-top, so the rule lines up with the
+   content edge instead of the outer gutter */
+.footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 20px;
+  background: rgba(244, 246, 242, .12);
+}
+.footer p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 13px;
+  color: var(--chalk-faint);
+}
+
+.noscript {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  color: var(--chalk-dim);
+}
+
+/* 10 ── responsive ───────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  .topbar { padding: 22px 18px 20px; }
+  .shell { padding: 0 18px 56px; }
+  .footer, .noscript { padding: 0 18px 32px; }
+  .field-lines { display: none; }
+
+  .round-grid { grid-template-columns: 1fr; }
+
+  .controls-pair { display: grid; grid-template-columns: 1fr auto; align-items: end; }
+  .controls-pair .field-grow:first-child { grid-column: 1; }
+  .controls-pair .swap-btn { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .controls-pair .field-grow:nth-of-type(2) { grid-column: 1; }
+  .controls-pair .btn { grid-column: 1 / -1; width: 100%; }
+
+  .round-tally { margin-left: 0; }
+
+  .card-featured { padding: 18px; }
+  .matchup { gap: 10px; margin-bottom: 18px; }
+  .matchup-side .crest,
+  .matchup-side .crest-badge { width: 52px; height: 52px; }
+  .matchup-side .crest-badge { font-size: 16px; }
+  .matchup-name { font-size: 16px; }
+  .matchup-vs { padding-top: 12px; font-size: 12px; }
+  .card-featured .verdict-label { font-size: 21px; }
+  .card-featured .verdict-glyph { font-size: 66px; }
+  .card-featured .legend-pct { font-size: 16px; }
+}
+
+@media (max-width: 420px) {
+  .tab { padding: 10px 8px; font-size: 13.5px; }
+  .legend-name { font-size: 10.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .btn:hover:not(:disabled),
+  .round-grid .card:hover { transform: none; }
+}

@@ -31,7 +31,6 @@ TODO once this works:
   historical matches) are loaded once at startup — add a /reload endpoint
   so a fresh pipeline run doesn't require restarting the whole app.
 """
-
 import os
 import json
 import yaml
@@ -45,11 +44,19 @@ from src.features.build_features import load_all_snapshots, matches_to_dataframe
 
 ROOT = Path(__file__).resolve().parents[2]
 CONFIG = yaml.safe_load(open(ROOT / "config" / "config.yaml"))
-MODEL_PATH = os.getenv("MODEL_PATH")
+
+from fastapi.middleware.cors import CORSMiddleware
 
 mlflow.set_tracking_uri("sqlite:///" + str(ROOT / "mlflow.db"))
 
 app = FastAPI(title="Football Outcome Predictor")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
 
 REGISTRY_NAME = CONFIG["model"]["registry_name"]
 ALIAS = "production"
@@ -61,6 +68,7 @@ FEATURE_ORDER = ["home_form", "away_form", "h2h_home_advantage", "home_elo", "aw
 # sklearn's LabelEncoder sorts classes alphabetically: A, D, H -> 0, 1, 2.
 # See TODO above about persisting this properly instead of hardcoding it.
 LABEL_MAP = {0: "Away Win", 1: "Draw", 2: "Home Win"}
+MODEL_PATH = os.getenv("MODEL_PATH")
 
 _model = None
 _team_state = None
@@ -76,7 +84,9 @@ def get_model():
             _model = mlflow.xgboost.load_model(source)
         except Exception as e:
             raise RuntimeError(
-                f"Could not load model from '{source}'. Original error: {e}"
+                f"Could not load model from '{source}'. Has a model been "
+                f"promoted yet? Run src/evaluation/evaluate.py first. "
+                f"Original error: {e}"
             )
     return _model
 
@@ -86,9 +96,7 @@ def get_team_state():
     if _team_state is None:
         path = ROOT / CONFIG["paths"]["processed_dir"] / "team_state.json"
         if not path.exists():
-            raise RuntimeError(
-                "team_state.json not found — run build_team_state.py first."
-            )
+            raise RuntimeError("team_state.json not found — run build_team_state.py first.")
         with open(path) as f:
             _team_state = json.load(f)
     return _team_state
@@ -99,9 +107,7 @@ def get_upcoming_fixtures():
     if _upcoming_fixtures is None:
         path = ROOT / CONFIG["paths"]["processed_dir"] / "upcoming_fixtures.json"
         if not path.exists():
-            raise RuntimeError(
-                "upcoming_fixtures.json not found — run build_team_state.py first."
-            )
+            raise RuntimeError("upcoming_fixtures.json not found — run build_team_state.py first.")
         with open(path) as f:
             _upcoming_fixtures = json.load(f)
     return _upcoming_fixtures
@@ -130,14 +136,8 @@ def compute_h2h(historical_df: pd.DataFrame, home_team: str, away_team: str) -> 
     met in the available history.
     """
     past = historical_df[
-        (
-            (historical_df["home_team"] == home_team)
-            & (historical_df["away_team"] == away_team)
-        )
-        | (
-            (historical_df["home_team"] == away_team)
-            & (historical_df["away_team"] == home_team)
-        )
+        ((historical_df["home_team"] == home_team) & (historical_df["away_team"] == away_team)) |
+        ((historical_df["home_team"] == away_team) & (historical_df["away_team"] == home_team))
     ]
     if past.empty:
         return 0.5
@@ -163,9 +163,7 @@ def find_team(team_state: dict, team_name: str) -> str:
     for name in team_state:
         if name.lower() == team_name.lower():
             return name
-    raise HTTPException(
-        status_code=404, detail=f"No current data for team '{team_name}'."
-    )
+    raise HTTPException(status_code=404, detail=f"No current data for team '{team_name}'.")
 
 
 def predict_match(home_team: str, away_team: str) -> dict:
@@ -177,17 +175,13 @@ def predict_match(home_team: str, away_team: str) -> dict:
     away_stats = team_state[away_key]
     h2h = compute_h2h(get_historical_df(), home_key, away_key)
 
-    features = pd.DataFrame(
-        [
-            {
-                "home_form": home_stats["form"],
-                "away_form": away_stats["form"],
-                "h2h_home_advantage": h2h,
-                "home_elo": home_stats["elo"],
-                "away_elo": away_stats["elo"],
-            }
-        ]
-    )[FEATURE_ORDER]
+    features = pd.DataFrame([{
+        "home_form": home_stats["form"],
+        "away_form": away_stats["form"],
+        "h2h_home_advantage": h2h,
+        "home_elo": home_stats["elo"],
+        "away_elo": away_stats["elo"],
+    }])[FEATURE_ORDER]
 
     model = get_model()
     pred_class = int(model.predict(features)[0])
@@ -206,14 +200,16 @@ def health():
     return {"status": "ok"}
 
 
+@app.get("/teams")
+def list_teams():
+    return {"teams": sorted(get_team_state().keys())}
+
+
 @app.get("/round/{matchday}")
 def predict_round(matchday: int):
     fixtures = [f for f in get_upcoming_fixtures() if f["matchday"] == matchday]
     if not fixtures:
-        raise HTTPException(
-            status_code=404,
-            detail=f"No scheduled fixtures found for matchday {matchday}.",
-        )
+        raise HTTPException(status_code=404, detail=f"No scheduled fixtures found for matchday {matchday}.")
 
     results = []
     for fixture in fixtures:
@@ -222,6 +218,7 @@ def predict_round(matchday: int):
         except HTTPException:
             continue  # skip fixtures where a team has no current state yet (e.g. new promotion)
         prediction["date"] = fixture["date"]
+        prediction["matchday"] = fixture["matchday"]
         results.append(prediction)
 
     return {"matchday": matchday, "predictions": results}
@@ -234,6 +231,12 @@ def predict_game(
 ):
     return predict_match(home, away)
 
+@app.get("/current-matchday")
+def current_matchday():
+    fixtures = get_upcoming_fixtures()
+    if not fixtures:
+        raise HTTPException(status_code=404, detail="No upcoming fixtures found.")
+    return {"matchday": fixtures[0]["matchday"]}
 
 @app.get("/team/{team_name}/next")
 def predict_team_next(team_name: str):
@@ -241,14 +244,11 @@ def predict_team_next(team_name: str):
     canonical = find_team(team_state, team_name)
 
     fixtures = [
-        f
-        for f in get_upcoming_fixtures()
+        f for f in get_upcoming_fixtures()
         if f["home_team"] == canonical or f["away_team"] == canonical
     ]
     if not fixtures:
-        raise HTTPException(
-            status_code=404, detail=f"No scheduled fixtures found for '{canonical}'."
-        )
+        raise HTTPException(status_code=404, detail=f"No scheduled fixtures found for '{canonical}'.")
 
     next_fixture = fixtures[0]  # already sorted by date in build_team_state.py
     prediction = predict_match(next_fixture["home_team"], next_fixture["away_team"])
