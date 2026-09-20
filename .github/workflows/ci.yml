@@ -38,6 +38,11 @@ jobs:
           FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
         run: uv run python src/ingestion/fetch_football_data.py
 
+      - name: Backfill historical seasons (needed for form/h2h/Elo history)
+        env:
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+        run: uv run python src/ingestion/backfill_seasons.py --seasons 2024 2025
+
       - name: Build features
         run: uv run python -m src.features.build_features
 
