@@ -372,20 +372,22 @@ svg { display: block; }
 /* crest, and its fallback badge — the badge is the design, not an error */
 .crest {
   flex: none;
-  width: 30px; height: 30px;
+  width: 44px; height: 44px;    /* was 38px */
+  padding: 3px;
+  box-sizing: border-box;
   border-radius: 50%;
   object-fit: contain;
-  background: rgba(19, 33, 28, .04);
+  background: var(--card);
 }
 
 .crest-badge {
   flex: none;
   display: grid;
   place-items: center;
-  width: 30px; height: 30px;
+  width: 38px; height: 38px;   /* was 30px */
   border-radius: 50%;
   border: 1px solid;
-  font-size: 10.5px;
+  font-size: 13px;             /* bumped slightly to match */
   font-weight: 700;
   font-stretch: 88%;
   letter-spacing: .01em;
@@ -526,9 +528,14 @@ svg { display: block; }
 
 .matchup-side .crest,
 .matchup-side .crest-badge {
-  width: 66px; height: 66px;
+  width: 88px; height: 88px;
 }
-.matchup-side .crest-badge { font-size: 20px; border-width: 1.5px; }
+
+.matchup-side .crest {
+  padding: 6px;
+  box-sizing: border-box;
+}
+.matchup-side .crest-badge { font-size: 24px; border-width: 1.5px; }
 
 .matchup-name {
   font-size: 19px;

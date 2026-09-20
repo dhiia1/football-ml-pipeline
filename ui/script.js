@@ -27,6 +27,32 @@
 
 const API_BASE = "http://localhost:8000";
 const LOGO_DIR = "assets/logos";
+// Explicit filename overrides — "footylogos" filenames don't match the
+// slugify() pattern (they use casual names, not official ones), so we
+// map each exact API team name straight to its real downloaded file
+// instead of trying to guess/rename to fit.
+const LOGO_FILENAME_OVERRIDES = {
+  "Athletic Club": "athletic-club-bilbao-logo-footylogos.svg",
+  "Club Atlético de Madrid": "atletico-madrid-logo-footylogos.svg",
+  "RC Celta de Vigo": "celta-vigo-logo-footylogos.svg",
+  "Deportivo Alavés": "deportivo-alaves-logo-footylogos.svg",
+  "RC Deportivo La Coruña": "deportivo-la-coruna-logo-footylogos.svg",
+  "Elche CF": "elche-cf-logo-footylogos.svg",
+  "FC Barcelona": "fc-barcelona-logo-footylogos.svg",
+  "Getafe CF": "getafe-cf-logo-footylogos.svg",
+  "Levante UD": "levante-ud-logo-footylogos.svg",
+  "Málaga CF": "malaga-cf-logo-footylogos.svg",
+  "CA Osasuna": "osasuna-logo-footylogos.svg",
+  "Real Racing Club de Santander": "racing-santander-logo-footylogos.svg",
+  "Rayo Vallecano de Madrid": "rayo-vallecano-logo-footylogos.svg",
+  "RCD Espanyol de Barcelona": "rcd-espanyol-barcelona-logo-footylogos.svg",
+  "Real Betis Balompié": "real-betis-balompie-logo-footylogos.svg",
+  "Real Madrid CF": "real-madrid-logo-footylogos.svg",
+  "Real Sociedad de Fútbol": "real-sociedad-logo-footylogos.svg",
+  "Sevilla FC": "sevilla-fc-logo-footylogos.svg",
+  "Valencia CF": "valencia-cf-logo-footylogos.svg",
+  "Villarreal CF": "villarreal-cf-logo-footylogos.svg",
+};
 
 /* Range offered in the matchday picker. */
 const MATCHDAY_MIN = 1;
@@ -209,7 +235,7 @@ function initialsBadge(teamName) {
 function crest(teamName) {
   const img = h("img", {
     class: "crest",
-    src: `${LOGO_DIR}/${slugify(teamName)}.png`,
+    src: `${LOGO_DIR}/${LOGO_FILENAME_OVERRIDES[teamName] || `${slugify(teamName)}.svg`}`,
     alt: "",
     decoding: "async",
   });
