@@ -100,8 +100,8 @@ def main():
     all_matches = load_all_snapshots(raw_dir)
 
     finished_df = matches_to_dataframe(all_matches)
-    finished_df = add_rolling_form(finished_df, CONFIG["features"]["rolling_form_window"])
     finished_df = add_elo_ratings(finished_df)
+    finished_df = add_rolling_form(finished_df, CONFIG["features"]["rolling_form_window"])
 
     team_state = build_team_state(finished_df)
 

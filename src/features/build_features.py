@@ -125,17 +125,14 @@ def add_rolling_form(df: pd.DataFrame, window: int) -> pd.DataFrame:
     return df.dropna(subset=["home_form", "away_form"])
 
 
-def add_head_to_head(df: pd.DataFrame) -> pd.DataFrame:
+def add_head_to_head(df: pd.DataFrame, decay: float = 0.7) -> pd.DataFrame:
     """
-    For each match, computes the home team's average points-per-game from
-    PAST meetings against this exact opponent (regardless of which side
-    they were on back then) — strictly before this match's date, same
-    leakage-safe rule as add_rolling_form.
-
-    Unlike rolling form, head-to-head history is sparse (two teams might
-    only meet once or twice a season), so instead of dropping matches with
-    no prior meetings, this fills them with 0.5 — a neutral "no history,
-    assume even" prior — rather than losing rows you can't afford to lose.
+    Average points earned by the "home" side across past meetings between
+    these two teams, weighted so RECENT meetings count more than old ones
+    — a meeting from years ago (different squad, different financial
+    situation, different manager) shouldn't count equally with one from
+    last month. Same leakage-safe rule as always: only matches strictly
+    before this row's date.
     """
     df = df.copy()
     df["h2h_home_advantage"] = None
@@ -149,25 +146,27 @@ def add_head_to_head(df: pd.DataFrame) -> pd.DataFrame:
 
     for idx, row in df.iterrows():
         home_team, away_team = row["home_team"], row["away_team"]
-        past_meetings = df[
-            (df["date"] < row["date"])
-            & (
-                ((df["home_team"] == home_team) & (df["away_team"] == away_team))
-                | ((df["home_team"] == away_team) & (df["away_team"] == home_team))
-            )
-        ]
+        past = df[
+            (df["date"] < row["date"]) &
+            (((df["home_team"] == home_team) & (df["away_team"] == away_team)) |
+             ((df["home_team"] == away_team) & (df["away_team"] == home_team)))
+        ].sort_values("date", ascending=False)  # most recent first
 
-        if past_meetings.empty:
-            df.at[idx, "h2h_home_advantage"] = 0.5  # no history — neutral prior
+        if past.empty:
+            df.at[idx, "h2h_home_advantage"] = 0.5
             continue
 
-        pts = []
-        for _, m in past_meetings.iterrows():
+        weighted_sum, total_weight = 0.0, 0.0
+        for i, (_, m) in enumerate(past.iterrows()):
+            weight = decay ** i
             if m["home_team"] == home_team:
-                pts.append(points(m["home_goals"], m["away_goals"]))
+                pts = points(m["home_goals"], m["away_goals"])
             else:
-                pts.append(points(m["away_goals"], m["home_goals"]))
-        df.at[idx, "h2h_home_advantage"] = sum(pts) / len(pts) / 3  # normalize to 0-1
+                pts = points(m["away_goals"], m["home_goals"])
+            weighted_sum += pts * weight
+            total_weight += weight
+
+        df.at[idx, "h2h_home_advantage"] = (weighted_sum / total_weight) / 3
 
     return df
 
@@ -237,7 +236,6 @@ def add_elo_ratings(
     df["away_elo"] = away_elos
     return df
 
-
 def main():
     raw_dir = ROOT / CONFIG["paths"]["raw_dir"]
     processed_dir = ROOT / CONFIG["paths"]["processed_dir"]
@@ -245,9 +243,9 @@ def main():
 
     raw = load_all_snapshots(raw_dir)
     df = matches_to_dataframe(raw)
+    df = add_elo_ratings(df)
     df = add_rolling_form(df, CONFIG["features"]["rolling_form_window"])
     df = add_head_to_head(df)
-    df = add_elo_ratings(df)
     out_path = processed_dir / "features.parquet"
     df.to_parquet(out_path, index=False)
     print(f"Saved {len(df)} feature rows to {out_path}")
