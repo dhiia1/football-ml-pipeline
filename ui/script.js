@@ -25,7 +25,8 @@
              Missing files are expected — they fall back to an initials badge.
    ========================================================================== */
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://football-ml-pipeline-api.onrender.com";
+//const API_BASE = "http://localhost:8000";
 const LOGO_DIR = "assets/logos";
 // Explicit filename overrides — "footylogos" filenames don't match the
 // slugify() pattern (they use casual names, not official ones), so we

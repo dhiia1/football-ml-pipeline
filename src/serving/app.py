@@ -53,7 +53,8 @@ app = FastAPI(title="Football Outcome Predictor")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["https://football-ml-pipeline.onrender.com"],
+    #allow_origins=["http://localhost:3000"]
     allow_methods=["GET"],
     allow_headers=["*"],
 )
