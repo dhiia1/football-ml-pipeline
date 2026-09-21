@@ -1,0 +1,22 @@
+artifact_path: /mnt/c/Users/ADMIN/Desktop/AI/football-ml-pipeline/mlruns/1/models/m-9ca3ba58af224197a12b2e3944f91a3d/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.13.9
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: ubj
+    xgb_version: 3.4.1
+mlflow_version: 3.16.1
+model_id: m-9ca3ba58af224197a12b2e3944f91a3d
+model_size_bytes: 78447
+model_uuid: m-9ca3ba58af224197a12b2e3944f91a3d
+prompts: null
+run_id: 71297ab5ba03419987d6d528b6647bea
+utc_time_created: '2026-09-19 18:21:30.254341'
